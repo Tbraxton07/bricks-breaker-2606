@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Game.h"
+#include <vector>
 
 Game::Game()
 {
@@ -20,12 +21,16 @@ void Game::Reset()
 	ResetBall();
 
 	// TODO #2 - Add this brick and 4 more bricks to the vector
-	brick.width = 10;
-	brick.height = 2;
-	brick.x_position = 0;
-	brick.y_position = 5;
-	brick.doubleThick = true;
-	brick.color = ConsoleColor::DarkGreen;
+	// 
+	GenerateBricks(5);
+	// 
+	// 
+	//brick.width = 10;
+	//brick.height = 2;
+	//brick.x_position = 0;
+	//brick.y_position = 5;
+	//brick.doubleThick = true;
+	//brick.color = ConsoleColor::DarkGreen;
 }
 
 void Game::ResetBall()
@@ -95,4 +100,39 @@ void Game::CheckCollision()
 	}
 
 	// TODO #7 - If ball touches bottom of window, pause ball and display (render) defeat text with R to reset
+}
+
+void Game::GenerateBricks(int _numOfBricks)
+{
+	Box tempBrick;
+	tempBrick.width = 10;
+	tempBrick.height = 2;
+	tempBrick.x_position = 0;
+	tempBrick.y_position = 5;
+	tempBrick.doubleThick = true;
+	tempBrick.color = ConsoleColor::DarkGreen;
+	
+	bricks.push_back(tempBrick);
+	
+
+	for (int i = 1; i < _numOfBricks; ++i) {
+
+		tempBrick.x_position = i;
+		bricks.push_back(tempBrick);
+	}
+
+
+
+
+
+
+	//brick.width = 10;
+	//brick.height = 2;
+	//brick.x_position = 0;
+	//brick.y_position = 5;
+	//brick.doubleThick = true;
+	//brick.color = ConsoleColor::DarkGreen;
+
+
+
 }
