@@ -10,4 +10,5 @@ public:
 	int height = 2;
 	void Draw() const override;
 	bool Contains(int x, int y);
+	void DecreaseBoxHealth();
 };
