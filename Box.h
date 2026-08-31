@@ -4,6 +4,7 @@
 class Box : public BaseObject
 {
 public:
+	int boxHealth = 3;
 	bool doubleThick = false;
 	int width = 2;
 	int height = 2;
