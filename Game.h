@@ -9,6 +9,7 @@ class Game
 	Box paddle;
 
 	// TODO #1 - Instead of storing 1 brick, store a vector of bricks (by value)
+	// complete
 	std::vector<Box> bricks;
 
 public:
@@ -18,5 +19,5 @@ public:
 	void Reset();
 	void ResetBall();
 	void CheckCollision();
-	void AddBricks(int _numOfBricks);
+	void GenerateBricks(int _numOfBricks);
 };
