@@ -21,5 +21,5 @@ public:
 	void Reset();
 	void ResetBall();
 	void CheckCollision();
-	void GenerateBricks(int _numOfBricks);
+	std::vector<Box> GenerateBricks(int _numOfBricks);
 };
