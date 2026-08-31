@@ -67,14 +67,9 @@ void Game::Render() const
 	// TODO #3 - Update render to render all bricks
 	//
 
-	//for (int i = 0; i < 5; ++i){
-	//	bricks[i].Draw();
-	//}
-	//for (const Box& brick : bricks) {
+	for (Box brick : bricks)
+		brick.Draw();
 
-	//}
-		//brick.Draw();
-		//
 	Console::Lock(false);
 }
 
