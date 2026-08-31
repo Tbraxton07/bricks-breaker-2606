@@ -21,7 +21,7 @@ void Game::Reset()
 
 	// TODO #2 - Add this brick and 4 more bricks to the vector
 	// Complete
-	GenerateBricks(5);
+	bricks = GenerateBricks(5);
 }
 
 void Game::ResetBall()
@@ -67,9 +67,14 @@ void Game::Render() const
 	// TODO #3 - Update render to render all bricks
 	//
 
-	for (Box brick : bricks)
-		brick.Draw();
+	//for (int i = 0; i < 5; ++i){
+	//	bricks[i].Draw();
+	//}
+	//for (const Box& brick : bricks) {
 
+	//}
+		//brick.Draw();
+		//
 	Console::Lock(false);
 }
 
@@ -96,8 +101,11 @@ void Game::CheckCollision()
 	// TODO #7 - If ball touches bottom of window, pause ball and display (render) defeat text with R to reset
 }
 
-void Game::GenerateBricks(int _numOfBricks)
+std::vector<Box> Game::GenerateBricks(int _numOfBricks)
 {
+	std::vector<Box> output;
+
+
 	Box tempBrick;
 	tempBrick.width = 10;
 	tempBrick.height = 2;
@@ -106,13 +114,13 @@ void Game::GenerateBricks(int _numOfBricks)
 	tempBrick.doubleThick = true;
 	tempBrick.color = ConsoleColor::DarkGreen;
 	
-	bricks.push_back(tempBrick);
+	output.push_back(tempBrick);
 	
 
 	for (int i = 1; i < _numOfBricks; ++i) {
 
 		tempBrick.x_position = i;
-		bricks.push_back(tempBrick);
+		output.push_back(tempBrick);
 	}
 
 
@@ -128,5 +136,5 @@ void Game::GenerateBricks(int _numOfBricks)
 	//brick.color = ConsoleColor::DarkGreen;
 
 
-
+	return output;
 }
