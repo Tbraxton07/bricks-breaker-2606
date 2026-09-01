@@ -87,6 +87,7 @@ void Game::CheckCollision()
 		}
 		// hp check for each box here
 		if (bricks[currBrick].boxHealth == 0)
+			bricks.erase(bricks.begin() + currBrick);
 	}
 
 	// TODO #6 - If no bricks remain, pause ball and display (render) victory text with R to reset
@@ -118,7 +119,7 @@ std::vector<Box> Game::GenerateBricks(int _numOfBricks)
 
 	for (int i = 1; i < _numOfBricks; ++i) {
 
-		tempBrick.x_position = i;
+		tempBrick.x_position = i*15;
 		output.push_back(tempBrick);
 	}
 
