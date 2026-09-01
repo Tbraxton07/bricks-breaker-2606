@@ -85,6 +85,7 @@ void Game::CheckCollision()
 			// TODO #5 - If the ball hits the same brick 3 times (color == black), remove it from the vector
 
 		}
+		// hp check for each box here
 	}
 
 	// TODO #6 - If no bricks remain, pause ball and display (render) victory text with R to reset
@@ -116,22 +117,18 @@ std::vector<Box> Game::GenerateBricks(int _numOfBricks)
 
 	for (int i = 1; i < _numOfBricks; ++i) {
 
-		tempBrick.x_position = i;
+		tempBrick.x_position = i*5;
 		output.push_back(tempBrick);
 	}
 
 
-
-
-
-
-	//brick.width = 10;
-	//brick.height = 2;
-	//brick.x_position = 0;
-	//brick.y_position = 5;
-	//brick.doubleThick = true;
-	//brick.color = ConsoleColor::DarkGreen;
-
-
 	return output;
 }
+
+void Game::DamageBrick(Box& _brick)
+{
+	_brick.DecreaseBoxHealth();
+	if (_brick.boxHealth == 0)
+		_brick.color = Black;
+}
+

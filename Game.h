@@ -22,4 +22,5 @@ public:
 	void ResetBall();
 	void CheckCollision();
 	std::vector<Box> GenerateBricks(int _numOfBricks);
+	void DamageBrick(Box& _brick);
 };
