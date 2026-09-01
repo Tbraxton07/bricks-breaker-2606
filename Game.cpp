@@ -67,8 +67,8 @@ void Game::Render() const
 	// TODO #3 - Update render to render all bricks
 	//complete
 
-	for (Box brick : bricks)
-		brick.Draw();
+	for (int currBrick = 0; currBrick < bricks.size(); ++currBrick)
+		bricks[currBrick].Draw();
 
 	Console::Lock(false);
 }
@@ -83,9 +83,10 @@ void Game::CheckCollision()
 			ball.y_velocity *= -1;
 
 			// TODO #5 - If the ball hits the same brick 3 times (color == black), remove it from the vector
-
+			DamageBrick(brick);
 		}
 		// hp check for each box here
+		if (brick.boxHealth == 0)
 	}
 
 	// TODO #6 - If no bricks remain, pause ball and display (render) victory text with R to reset
@@ -117,9 +118,10 @@ std::vector<Box> Game::GenerateBricks(int _numOfBricks)
 
 	for (int i = 1; i < _numOfBricks; ++i) {
 
-		tempBrick.x_position = i*5;
+		tempBrick.x_position = i;
 		output.push_back(tempBrick);
 	}
+
 
 
 	return output;
