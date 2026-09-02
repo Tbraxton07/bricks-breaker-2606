@@ -112,7 +112,7 @@ std::vector<Box> Game::GenerateBricks(int _numOfBricks)
 	tempBrick.x_position = 0;
 	tempBrick.y_position = 5;
 	tempBrick.doubleThick = true;
-	tempBrick.color = ConsoleColor::DarkGreen;
+	tempBrick.color = ConsoleColor::DarkCyan;
 	
 	output.push_back(tempBrick);
 	
@@ -134,4 +134,5 @@ void Game::DamageBrick(Box& _brick)
 	if (_brick.boxHealth == 0)
 		_brick.color = Black;
 }
+
 
