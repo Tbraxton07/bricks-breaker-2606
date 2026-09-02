@@ -85,9 +85,6 @@ void Game::CheckCollision()
 			// TODO #5 - If the ball hits the same brick 3 times (color == black), remove it from the vector
 			DamageBrick(bricks[currBrick]);
 		}
-		// hp check for each box here
-		if (bricks[currBrick].boxHealth == 0)
-			bricks.erase(bricks.begin() + currBrick);
 	}
 
 	// TODO #6 - If no bricks remain, pause ball and display (render) victory text with R to reset
