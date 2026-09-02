@@ -92,7 +92,7 @@ void Game::CheckCollision()
 	// TODO #6 - If no bricks remain, pause ball and display (render) victory text with R to reset
 
 	if (bricks.empty()) {
-		Console::WordWrap(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, "Victory: \tPress \"R\" To Play Again");
+		Console::WordWrap(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 4, WINDOW_WIDTH, "Victory: \tPress \"R\" To Play Again");
 		StopBall();
 	}
 		
@@ -104,7 +104,7 @@ void Game::CheckCollision()
 
 	// TODO #7 - If ball touches bottom of window, pause ball and display (render) defeat text with R to reset
 	if (ball.y_position == WINDOW_HEIGHT) {
-		Console::WordWrap(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, "Defeat: \tPress \"R\" To Play Again");
+		Console::WordWrap(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 4, WINDOW_WIDTH, "Defeat: \tPress \"R\" To Play Again");
 		StopBall();
 	}
 }
