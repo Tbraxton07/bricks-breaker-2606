@@ -93,6 +93,7 @@ void Game::CheckCollision()
 
 	if (bricks.empty()) {
 		Console::WordWrap(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, "Victory: \tPress \"R\" To Play Again");
+		StopBall();
 	}
 		
 
@@ -136,6 +137,12 @@ void Game::DamageBrick(Box& _brick)
 	_brick.DecreaseBoxHealth();
 	if (_brick.boxHealth == 0)
 		_brick.color = Black;
+}
+
+void Game::StopBall()
+{
+	ball.x_velocity = 0;
+	ball.y_velocity = 0;
 }
 
 

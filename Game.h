@@ -23,4 +23,5 @@ public:
 	void CheckCollision();
 	std::vector<Box> GenerateBricks(int _numOfBricks);
 	void DamageBrick(Box& _brick);
+	void StopBall();
 };
