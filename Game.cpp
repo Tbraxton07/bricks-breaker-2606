@@ -91,6 +91,10 @@ void Game::CheckCollision()
 
 	// TODO #6 - If no bricks remain, pause ball and display (render) victory text with R to reset
 
+	if (bricks.empty()) {
+		Console::WordWrap(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, "Victory: \tPress \"R\" To Play Again");
+	}
+		
 
 	if (paddle.Contains(ball.x_position + ball.x_velocity, ball.y_velocity + ball.y_position))
 	{
