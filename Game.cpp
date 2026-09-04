@@ -21,6 +21,7 @@ void Game::Reset()
 
 	// TODO #2 - Add this brick and 4 more bricks to the vector
 	// Complete
+	bricks.clear();
 	bricks = GenerateBricks(5);
 }
 
