@@ -121,7 +121,7 @@ std::vector<Box> Game::GenerateBricks(int _numOfBricks)
 	tempBrick.x_position = 0;
 	tempBrick.y_position = 5;
 	tempBrick.doubleThick = true;
-	tempBrick.color = ConsoleColor::DarkCyan;
+	tempBrick.color = ConsoleColor::DarkGreen;
 	int offSet = (WINDOW_WIDTH) / _numOfBricks;
 	
 	output.push_back(tempBrick);
