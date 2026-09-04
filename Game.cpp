@@ -141,7 +141,12 @@ std::vector<Box> Game::GenerateBricks(int _numOfBricks)
 void Game::DamageBrick(Box& _brick)
 {
 	_brick.DecreaseBoxHealth();
-	if (_brick.boxHealth == 0)
+	if (_brick.boxHealth == 3) {
+		_brick.color = Green;
+	}
+	else if (_brick.boxHealth == 2 || _brick.boxHealth == 1)
+		_brick.color = Blue;
+	else if (_brick.boxHealth == 0)
 		_brick.color = Black;
 }
 
