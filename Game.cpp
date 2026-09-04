@@ -21,6 +21,7 @@ void Game::Reset()
 
 	// TODO #2 - Add this brick and 4 more bricks to the vector
 	// Complete
+	bricks.clear();
 	bricks = GenerateBricks(5);
 }
 
@@ -120,7 +121,7 @@ std::vector<Box> Game::GenerateBricks(int _numOfBricks)
 	tempBrick.x_position = 0;
 	tempBrick.y_position = 5;
 	tempBrick.doubleThick = true;
-	tempBrick.color = ConsoleColor::DarkCyan;
+	tempBrick.color = ConsoleColor::DarkGreen;
 	int offSet = (WINDOW_WIDTH) / _numOfBricks;
 	
 	output.push_back(tempBrick);
@@ -140,7 +141,12 @@ std::vector<Box> Game::GenerateBricks(int _numOfBricks)
 void Game::DamageBrick(Box& _brick)
 {
 	_brick.DecreaseBoxHealth();
-	if (_brick.boxHealth == 0)
+	if (_brick.boxHealth == 2) {
+		_brick.color = Blue;
+	}
+	else if (_brick.boxHealth == 1)
+		_brick.color = DarkBlue;
+	else if (_brick.boxHealth == 0)
 		_brick.color = Black;
 }
 
